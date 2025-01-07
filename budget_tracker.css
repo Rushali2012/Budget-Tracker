@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #346e78;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #293c50;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007BFF;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .transaction-list-container {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  #transactions {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  #transactions li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+  
+  #transactions li.income {
+    background-color: #d4edda; 
+    color: #155724;
+  }
+  
+  #transactions li.withdraw {
+    background-color: #f8d7da; 
+    color: #721c24; 
+  }
+  

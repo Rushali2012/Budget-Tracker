@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="budget_tracker.css">
+</head>
+<body>
+  <div class="container">
+    <h1 style="background-color: #346e78;color: white;border: 1px solid #ccc; border-radius: 4px;">Budget Tracker</h1>
+    <input type="number" id="amt" style="width:95%" placeholder="Enter amount to Add or Withdraw" required>
+    <br>
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="withdraw">Withdraw</option>
+    </select>
+    <br>
+    <button id="addt" style="font-size: 20px;font-weight: bold;">Add Transaction</button>
+    <h2>Balance: ₹<span id="bal">0.0</span></h2>
+    <h3>Transactions</h3>
+    <div class="transaction-list-container">
+      <ol id="transactions"></ol>
+    </div>
+    <br>
+    <a href="index.html">Back to Dashboard</a>
+  </div>
+
+  <script src="budget_tracker.js"></script>
+</body>
+</html>
