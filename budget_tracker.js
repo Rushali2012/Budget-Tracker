@@ -21,26 +21,25 @@ document.getElementById('addt').addEventListener('click', function() {
   if (type === 'income') balance += amount;
   else balance -= amount;
 
-  transactions.push({ amount, type, time });
+  transactions.unshift({ amount, type, time });
 
   display();
 });
 
 function display() {
-  document.getElementById('bal').textContent = balance.toFixed(2);
+  document.getElementById('bal').textContent = balance;
 
-  const transactionList = document.getElementById('transactions');
-  transactionList.innerHTML = ''; 
+  const transactionl = document.getElementById('transactions');
+  transactionl.innerHTML = ''; 
 
   transactions.forEach((transaction) => {
     const li = document.createElement('li');
     li.className = transaction.type; 
     li.innerHTML = `₹${transaction.amount} - ${capitalize(transaction.type)} at ${transaction.time}`;
-    transactionList.appendChild(li);
+    transactionl.appendChild(li); 
   });
 }
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
