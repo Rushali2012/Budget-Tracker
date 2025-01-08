@@ -6,12 +6,12 @@ document.getElementById('addt').addEventListener('click', function() {
   const type = document.getElementById('type').value;
 
   if (isNaN(amount) || amount <= 0) {
-    alert("Please enter a valid amount.");
+    showAlert("Please enter a valid amount.");
     return;
   }
 
   if (type === 'withdraw' && balance - amount < 0) {
-    alert("Insufficient balance for withdrawal.");
+    showAlert("Insufficient balance for withdrawal.");
     return;
   }
 
@@ -24,6 +24,7 @@ document.getElementById('addt').addEventListener('click', function() {
   transactions.unshift({ amount, type, time });
 
   display();
+  hideAlert();
 });
 
 function display() {
@@ -42,4 +43,15 @@ function display() {
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function showAlert(message) {
+  const alertmsg = document.getElementById('alert-message');
+  alertmsg.textContent = message;
+  alertmsg.style.display = 'block'; 
+}
+
+function hideAlert() {
+  const alertmsg = document.getElementById('alert-message');
+  alertmsg.style.display = 'none'; 
 }

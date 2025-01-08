@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="form-container">
+        <div id="alert-message" class="alert-message"></div> 
         <h2>Sign In</h2>
         <form id="loginForm">
             <input type="text" id="uname" placeholder="Username" required>
@@ -32,13 +33,23 @@
                 if (username === data.username && password === data.password) {
                     window.location.href = 'budget_tracker.html';  
                 } else {
-                    alert('Invalid username or password');  
+                    showAlert('Invalid username or password');  
                 }
             } else {
-                alert('No registered users found');  
+                showAlert('No registered users found');  
             }
         });
+
+        function showAlert(message) {
+            const alertmsg = document.getElementById('alert-message');
+            alertmsg.textContent = message;
+            alertmsg.style.display = 'block'; 
+        }
+
+        function hideAlert() {
+            const alertmsg = document.getElementById('alert-message');
+            alertmsg.style.display = 'none'; 
+        }
     </script>
 </body>
 </html>
-

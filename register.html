@@ -8,8 +8,9 @@
 </head>
 <body>
     <form id="signup-form">
+        <div id="alert-message" class="alert-message"></div> 
+        <h2>Register</h2>
         <table>
-            <h2>Register</h2>
             <tr>
                 <td>First Name:</td>
                 <td><input type="text" id="fname" placeholder="Enter your first name" required></td>
@@ -58,12 +59,28 @@
                 
                 localStorage.setItem('data', JSON.stringify(data)); 
 
-                alert('Registration Successful! You can now Sign-In.');
+                showAlert('Registration Successful! You can now Sign-In.', 'success');
                 window.location.href = 'signin.html';  
             } else {
-                alert('Please fill in all fields.');
+                showAlert('Please fill in all fields.', 'error');
             }
         });
+
+        function showAlert(message, type) {
+            const alertmsg = document.getElementById('alert-message');
+            alertmsg.textContent = message;
+            alertmsg.style.display = 'block'; 
+
+            if (type === 'error') {
+                alertmsg.style.backgroundColor = '#f8d7da';
+                alertmsg.style.color = '#721c24';
+                alertmsg.style.border = '1px solid #f5c6cb';
+            } else if (type === 'success') {
+                alertmsg.style.backgroundColor = '#d4edda';
+                alertmsg.style.color = '#155724';
+                alertmsg.style.border = '1px solid #c3e6cb';
+            }
+        }
     </script>
 </body>
 </html>
